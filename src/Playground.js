@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Playground.css";
+import "./Playground.less";
 
 // want to write a list rendered by data
 // now i want to scroll the list
