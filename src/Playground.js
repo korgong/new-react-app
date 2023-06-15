@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import "./Playground.less";
+import { throttle } from "./utils";
 
 // want to write a list rendered by data
 // now i want to scroll the list
@@ -8,6 +9,7 @@ import "./Playground.less";
 // every page is 6 items.
 // we display 10 items for one page
 // listen to the container, and change current render data.
+// add throttle function and cache scroll function
 const itemHeight = 50;
 const pageItemsNum = 10;
 function Playground() {
@@ -22,9 +24,11 @@ function Playground() {
         const indexEnd = indexStart + pageItemsNum -1;
         setList(initialArr.slice(indexStart, indexEnd + 1));
     }
+    // eslint-disable-next-line
+    const scrollListThrottle = useCallback(throttle(scrollList, 50), []);
     return (
         <div className="list">
-            <ul className="list-container" onScroll={scrollList}>
+            <ul className="list-container" onScroll={scrollListThrottle}>
                 {list.map((item, index) => (
                     <li style={{top: (item - 1) * itemHeight + 'px'}} className='list-item' key={index}>item {item}</li>
                 ))}
