@@ -4,7 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Notice
 this branch provide react frame. don't add business logic here <br>     
-this branch will update config to better serve business logic
+this branch will update config to better serve business logic <br>
+you should use node 16 to run this project <br>
+this project has a conflict with peer dependency <br>
 
 ## Available Scripts
 

@@ -1,4 +1,5 @@
 import Playground from "./Playground";
+import "antd/dist/antd.css";
 
 // want to write a list rendered by data
 function App() {
