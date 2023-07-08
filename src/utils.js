@@ -23,3 +23,15 @@ export function debounce(func, delay) {
         }, delay);
     }
 }
+
+export const DataSource = {
+    getComments: (id) => {
+        return new Promise(resolve => {
+            resolve([1, 2, 3]);
+        })
+        // return Promise.resolve([1, 2, 3]);
+    },
+    getStudents: (id) => {
+        return Promise.resolve([1, 2, 3]);
+    },
+}
